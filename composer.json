@@ -1,9 +1,15 @@
 {
     "name": "imikemiller/laravel-pkeys",
-    "description": "A Laravel wrapper for the Pkeys library",
+    "description": "A Laravel wrapper for the Pkeys library.",
     "type": "library",
     "require": {
         "imikemiller/pkeys": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3@dev",
+        "phpspec/phpspec": "~2.1",
+        "laravel/laravel": "dev-develop",
+        "orchestra/testbench": "~3.0"
     },
     "license": "MIT",
     "authors": [
@@ -12,5 +18,18 @@
             "email": "mike@mikemiller.uk"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "LaravelPkeys\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    }
 }
