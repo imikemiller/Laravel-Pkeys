@@ -1,0 +1,16 @@
+{
+    "name": "imikemiller/laravel-pkeys",
+    "description": "A Laravel wrapper for the Pkeys library",
+    "type": "library",
+    "require": {
+        "imikemiller/pkeys": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Miller",
+            "email": "mike@mikemiller.uk"
+        }
+    ],
+    "minimum-stability": "dev"
+}
