@@ -7,14 +7,16 @@
  */
 
 if (! function_exists('pkey')) {
+
     /**
-     * Get the configuration path.
+     * Helper method to access the Pkey factory class
      *
-     * @param  string  $path
-     * @return string
+     * @param $pattern
+     * @param array $params
+     * @return mixed
      */
     function pkey($pattern,$params = [])
     {
-        return app()->make(\Pkeys\Pkey::class)->build($pattern,$params);
+        return app()->make(\Pkeys\Pkey::class)->make($pattern,$params);
     }
 }
