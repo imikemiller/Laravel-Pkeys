@@ -115,7 +115,9 @@ That is it! A simple solution to an annoying problem.
 #### Custom Validation
 If you need to add a custom validator you can extend the existing `\Pkeys\Validation\ValidationRules` class or you can write your own that implmenents the `\Pkeys\Interfaces\ValidatorInterface` and pass it into the Pkey constructor.
 
-  `$pkey = new Pkey('path/to/schema.php',$customValidator);`  
+```php
+    app()->make(\Pkeys\Pkey::class)->setValidator($customValidator);
+```
 
 Validation rules in the schema should reference methods on the validator class.
 
