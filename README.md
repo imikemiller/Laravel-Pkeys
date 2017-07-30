@@ -75,7 +75,7 @@ The Laravel-Pkeys package includes a skeleton schema that is saved in the config
 To load a schema at an alternative path you can add the following to a service provider:
 
 ```php
-    app()->make(Pkey::class)->setSchema('path/to/alternative/schema.php');
+    app()->make(\Pkeys\Pkey::class)->setSchema('path/to/alternative/schema.php');
 ```
 
 #### Generate Key
