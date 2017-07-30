@@ -34,20 +34,32 @@ Publish the Pkeys configuration schema
 
 Register the Pkeys service provider in `config/app.php`
 
-```
+```php
 'providers' => [
-    ... other stuff
+
+    //... other stuff
+    
     \LaravelPkeys\PkeysProvider::class,
-    ... probably more stuff
-    ```
+    
+    //... probably more stuff
+   
+    ]
+```
+    
 Optionally register the facade
 
-```
+
+```php
 'aliases' => [
-    ... other stuff
+
+    //... other stuff
+    
     'Pkey'=>\LaravelPkeys\PkeysFacade::class
-    ... probably more stuff
-    ```
+    
+    //... probably more stuff 
+    
+    ]
+```
     
 ### Use
 
@@ -67,16 +79,21 @@ Key objects can be generated from the `config/pkeys.php` schema defination using
 
 ###### Using the Facade
 
-  `\Pkey::make('redis.user.messages',['id'=>21]);`
-  
+```php
+    \Pkey::make('redis.user.messages',['id'=>21]);`
+```
+
 ###### Using the Helper
 
-  `pkey('redis.user.messages',['id'=>21]);`
-
+```php
+    pkey('redis.user.messages',['id'=>21]);`
+```
 
 Pkeys will stringify and can usually be passed straight into whichever client library you are using. Otherwise to get the key string call:
  
-  `$key->getKey();`
+```php
+    $key->getKey();
+```
   
 That is it! A simple solution to an annoying problem.
 
@@ -99,7 +116,8 @@ If you need to add a custom validator you can extend the existing `\Pkeys\Valida
 Validation rules in the schema should reference methods on the validator class.
 
 #### Example Schema 
-```/*
+```php
+    /*
      * Real world schema usage examples.
      */
     'schema'=>[
