@@ -72,7 +72,11 @@ NOTE: Your schema must include an array under the key `schema` and can optionall
 
 The Laravel-Pkeys package includes a skeleton schema that is saved in the config directory as `pkeys.php`.
 
-To load a schema at an alternative path you can ...
+To load a schema at an alternative path you can add the following to a service provider:
+
+```php
+    app()->make(Pkey::class)->setSchema('path/to/alternative/schema.php');
+```
 
 #### Generate Key
 Key objects can be generated from the `config/pkeys.php` schema defination using any of the following methods:
